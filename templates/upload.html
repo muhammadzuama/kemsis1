@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Gambar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .upload-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .upload-form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .upload-form input[type="file"],
+        .upload-form input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .upload-form input[type="submit"] {
+            background-color: #3897f0;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .upload-form input[type="submit"]:hover {
+            background-color: #2781e5;
+        }
+
+        .upload-form .upload-icon {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload Gambar - Motivasi</h1>
+        <div class="upload-form">
+            <form method="POST" enctype="multipart/form-data" action="/up">
+                <input type="file" name="file" accept="image/*" required><br>
+                <input type="text" name="caption" placeholder="Caption" required><br>
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

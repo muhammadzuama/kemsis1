@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyGram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .post {
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        
+        .post .image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        .post .caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .post .details {
+            color: #888888;
+            font-size: 14px;
+        }
+
+        .add-image-button {
+            background-color: #3897f0;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .add-image-button:hover {
+            background-color: #2781e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tampilan Gambar</h1>
+        <a href="/up" class="add-image-button">Tambah Gambar</a>
+        {% for image in images %}
+        <div class="post">
+            <img src="{{ url_for('uploaded_file', filename=image[2].split('/')[-1]) }}" alt="Image" class="image">
+            <div class="caption">{{ image[1] }}</div>
+            <div class="details">ID: {{ image[0] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
